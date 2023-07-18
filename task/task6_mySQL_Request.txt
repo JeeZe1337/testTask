@@ -1,0 +1,1 @@
+SELECT department_id, (SELECT name FROM department WHERE id = department_id ) as 'name' FROM evaluations WHERE gender = true and value > 5 GROUP BY department_id

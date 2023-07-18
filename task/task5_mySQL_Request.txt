@@ -1,0 +1,4 @@
+SELECT goods_id,
+(SELECT name FROM goods WHERE id = goods_id) as 'name'
+FROM goods_tags gt WHERE (SELECT COUNT(id) FROM tags) = (SELECT COUNT(tag_id)
+FROM goods_tags WHERE goods_id = gt.goods_id) GROUP BY goods_id
