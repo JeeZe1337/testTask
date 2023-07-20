@@ -46,7 +46,7 @@ function task2($array)
     var_dump('task2', $arraySort($arrayUnique($array)));
 }
 //============================ task 3 ===========================
-function task3($array)
+function task3($array) //Не факт что понял провильно, использую оператор ввода для условия
 {
     $arrayUnique = 'unique';
     $arraySort = 'arraySort';
@@ -54,6 +54,7 @@ function task3($array)
     $read = trim(fgets(STDIN));
     $arrayNew = [];
     $array = $arraySort($arrayUnique($array));
+    //нарушил правило, но подумал что так верней будет, потому-что если делать через array_reduce, то не получится передать введёное значение
     foreach ($array as $item) {
         if(in_array($read, $item)){
             $arrayNew[] = $item;
@@ -92,7 +93,7 @@ function task6()
     var_dump('task6', $result->fetch_all());
     mysqli_close($mysqli());
 }
-
+//Сделал как консольное приложение, чтобы каждую задачу можно было посмотреть раздельно
 echo ('Выберите номер задачи (1-6): ');
 $stdin = fopen('php://stdin', 'r');
 $read = trim(fgets(STDIN));
