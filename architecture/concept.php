@@ -1,5 +1,5 @@
 <?php
-
+//Использовал singleton
  class Single {
     protected static $_instance;
     private $key;
